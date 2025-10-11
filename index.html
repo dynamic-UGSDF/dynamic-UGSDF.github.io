@@ -197,7 +197,7 @@
     font-weight: 800;
     margin-right: 10px;
     /* background: linear-gradient(45deg, #1b25bc, #ff00b7, #00d1c7, #4169E1); */
-    background: linear-gradient(45deg, #00c6ff, #0072ff, #8e54e9, #ff6a95);
+    background: linear-gradient(45deg, #48609C, #364378, #5a6ba8, #4a5a8c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 300% 300%;
@@ -237,9 +237,9 @@
   /* Soft pastel gradient */
   background: linear-gradient(
     135deg,
-    #ead6fc,  /* Light lavender */
-    #e8f5fb,  /* Very light blue */
-    #fce4ec   /* Very light pink */
+    #e1f5fe,  /* Light cyan */
+    #e8f4fd,  /* Very light blue */
+    #f0f8ff   /* Alice blue */
   );
   padding: 10px 0;
 }
@@ -348,14 +348,14 @@
   } */
 
 
-  /* Light Section (pastel tones continuing the Siri vibe) */
+  /* Light Section (pastel tones continuing the modern vibe) */
 .section.is-light {
   /* Gentle pastel gradient */
   background: linear-gradient(
     135deg,
-    #e7e1ff,  /* Soft lilac */
-    #e8fcfa,  /* Light aqua tint */
-    #ffe3f6   /* Light rose */
+    #e1f5fe,  /* Light cyan */
+    #e8f4fd,  /* Light blue tint */
+    #f0f8ff   /* Alice blue */
   );
   padding: 60px 0;
 }
@@ -373,7 +373,7 @@
   .colorful-title {
     text-align: center;
     padding: 20px 0;
-    color: #7e56d0;
+    color: #48609C;
     font-size: 2.2rem;
     font-weight: 1000;
     margin-bottom: 30px;
@@ -414,14 +414,14 @@
       <div class="is-size-5 publication-authors">
         <span class="author-block"><a href="https://scholar.google.com/citations?user=D17zVs8AAAAJ&hl=en">Siddharth Tourani</a><sup>*,$</sup>,</span>
         <span class="author-block"><a href="">Jayaram Reddy</a><sup>¶</sup>,</span>
-        <span class="author-block"><a href="">Akash Kumbar</a><sup>¶</sup>,</span>
-        <span class="author-block"><a href="">Satyajit Tourani</a><sup>¶</sup>,</span>
+        <span class="author-block"><a href="https://akash-kumbar.github.io/">Akash Kumbar</a><sup>¶</sup>,</span>
+        <span class="author-block"><a href="https://www.linkedin.com/in/satyajittourani/">Satyajit Tourani</a><sup>¶</sup>,</span>
       </div>
       <div class="is-size-5 publication-authors">
         <span class="author-block"><a href="">Nishant Goyal</a><sup>†</sup>,</span>
         <span class="author-block"><a href="https://madhavak-iiith.github.io/">Madhava Krishna</a><sup>¶</sup>,</span>
-        <span class="author-block"><a href="">N Dinesh Reddy</a><sup>§</sup>,</span>
-        <span class="author-block"><a href="">Muhammad Haris Khan</a><sup>$</sup>,</span>
+        <span class="author-block"><a href="https://dineshreddy91.github.io/">N Dinesh Reddy</a><sup>§</sup>,</span>
+        <span class="author-block"><a href="https://m-haris-khan.com/">Muhammad Haris Khan</a><sup>$</sup>,</span>
       </div>
       
       
@@ -434,6 +434,11 @@
         <span class="author-block"><sup>$</sup>MBZUAI </span>
         <span class="author-block"><sup>†</sup>IIT Kharagpur</span>
       </div>
+
+      <div class="is-size-5 publication-authors">
+        <span class="author-block" style="background: linear-gradient(45deg, #48609C, #364378, #5a6ba8, #4a5a8c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 300% 300%; animation: gradient-shift 5s ease infinite; font-weight: bold;">Accepted at ICCV 2025</span> 
+      </div>
+      
 
       <div class="column has-text-centered">
         <div class="publication-links">
@@ -486,12 +491,21 @@ integrates Signed Distance Functions (SDFs) with 3D Gaussian Splatting (3DGS) to
     
     <div class="columns is-centered">
       <div class="column is-full">
-        <img src="assets/overview.png" alt="method overview" class="image is-fullwidth">
+        <div style="width: 100%; display: flex; justify-content: center;">
+          <object data="assets/teaser.svg" type="image/svg+xml" style="width: 100%; max-width: 1200px; height: auto;">
+            <img src="assets/teaser.svg" alt="teaser" style="width: 100%; max-width: 1200px; height: auto;">
+          </object>
+        </div>
       </div>
     </div>
       <p>
-        <b>TL;DR</b>: 
-        Needs update.
+        <b>Overview</b>: 
+        UGSDF takes posed images, dynamic object masks, 2D tracking data, and depth maps (optionally LiDAR) as input,
+and outputs rendered dynamic scene. The initial model is constructed through canonicalization described in Section 4.1. A dynamic
+3DGS motion representation described in Section 4.2. The object of interest is represented using a combined representation of Signed
+Distance Functions (SDFs) and 3D Gaussian Splatting (3DGS) as detailed in Section 4.3 and the joint optimization scheme is described
+in Section 4.5. These two representations are jointly learned. The coarse geometry of the Gaussians constrains the ray sampling of the
+SDF, while SDF queries add detail to the Gaussian representation.
       </p>
   <br><br><br>
 </div></section>
