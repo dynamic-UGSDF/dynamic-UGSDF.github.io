@@ -357,7 +357,7 @@
     #e8f4fd,  /* Light blue tint */
     #f0f8ff   /* Alice blue */
   );
-  padding: 60px 0;
+  padding: 60px -10px;
 }
 
   .section.is-light .container {
@@ -401,8 +401,6 @@
 <body data-new-gr-c-s-check-loaded="8.932.0" data-gr-ext-installed="">
 
 <section class="section is-light" id="results">
-  <br>
-  <br>
   <div class="columns is-centered">
     <div class="column has-text-centered">
       <div class="title-container">
@@ -469,9 +467,6 @@
 
 <section class="hero">
   <br><br><br>
-  <br><br><br>
-  <br><br><br>
-  <br><br><br>
 
   <div class="columns is-centered">
     <div class="column is-full">
@@ -481,6 +476,15 @@
         </object>
       </div>
     </div>
+  </div>
+
+  <div class="container is-max-desktop" style="text-align: center; margin-top: 5px;">
+    <p style="font-size: 1rem; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto;">
+      We propose Urban Gaussians via Signed Distance Functions (UGSDF) for dynamic object modeling and rendering
+      in urban scenes. UGSDF maintains a Signed Distance Function (SDF) and 3D Gaussian Splatting (3DGS) representation to
+      model and render a dynamic object. It can be used for object removal, scene decomposition, scene composition (inserted object
+      indicated with green arrow) and other tasks related to simulation in urban scenes.
+    </p>
   </div>
 
   <div class="container is-max-desktop">
@@ -493,6 +497,14 @@
       </p>
     </div>
 
+  <div style="background: linear-gradient(135deg, #e1f5fe, #e8f4fd, #f0f8ff); padding: 30px 0; margin: 20px 0; box-shadow: 0 4px 15px rgba(72, 96, 156, 0.1); text-align: center; width: 100%;">
+    <div class="container is-max-desktop">
+      <video controls="controls" autoplay="autoplay" muted="muted" loop="" playsinline="" style="width: 100%; max-width: 1000px; border-radius: 10px;">
+        <source src="assets/iccv-submission.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
 
   <div class="container is-max-desktop">
     <h2 class="title is-3">Abstract</h2>
@@ -514,16 +526,86 @@ integrates Signed Distance Functions (SDFs) with 3D Gaussian Splatting (3DGS) to
       </p>
     </div>
     
+  </div></section>
+
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Method</h2>
+    <div class="content">
+      <p>
+        UGSDF integrates 3D Gaussian Splatting (3DGS) and Signed Distance Functions (SDFs) to accurately model and render dynamic urban scenes. The method takes 2D priors—depth maps from a monocular depth network and point tracks from a tracker—to derive 3D geometry and motion cues without requiring LiDAR or ground-truth 3D motion annotations.
+The approach builds a canonical 3D model of each dynamic object using 2D depth and tracking data, then jointly learns SDF and 3D Gaussian representations. The Gaussians provide high-fidelity rendering and guide surface sampling for the SDF, while the SDF refines Gaussian placement and enforces geometric smoothness. This bi-directional guidance yields accurate reconstructions and realistic novel-view synthesis of vehicles and pedestrians in real-world urban environments
+      </p>
+    </div>
+    
+    <div class="columns is-centered" style="margin-top: 30px;">
+      <div class="column is-full">
+        <div style="width: 100%; display: flex; justify-content: center;">
+          <object data="assets/overview.svg" type="image/svg+xml" style="width: 100%; max-width: 1000px; height: auto;">
+            <img src="assets/overview.svg" alt="overview" style="width: 100%; max-width: 1000px; height: auto;">
+          </object>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin: 20px 0;">
+      <p style="font-size: 1rem; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto;">
+        UGSDF takes images, depth maps, and 2D tracking data as input to jointly learn 3D Gaussian and SDF representations, producing realistic renderings of dynamic urban scenes
+      </p>
+    </div>
+    
+    <div class="columns" style="margin-top: 30px;">
+      <div class="column is-half">
+        <div style="text-align: center;">
+          <object data="assets/sdf-network.svg" type="image/svg+xml" style="width: 100%; max-width: 400px; height: auto;">
+            <img src="assets/sdf-network.svg" alt="SDF network" style="width: 100%; max-width: 400px; height: auto;">
+          </object>
+          <p style="font-size: 0.9rem; line-height: 1.5; color: #333; margin-top: 10px; text-align: left;">
+            An MLP-based SDF network predicts signed distance values for each point, deforming observations into a canonical space for consistent shape modeling
+          </p>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div style="text-align: center;">
+          <object data="assets/sdf-guided-densification.svg" type="image/svg+xml" style="width: 100%; max-width: 400px; height: auto;">
+            <img src="assets/sdf-guided-densification.svg" alt="SDF guided densification" style="width: 100%; max-width: 400px; height: auto;">
+          </object>
+          <p style="font-size: 0.9rem; line-height: 1.5; color: #333; margin-top: 10px; text-align: left;">
+            The SDF network guides where to add or remove Gaussian primitives, improving geometric accuracy and surface fidelity in dynamic regions
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Qualitative Results</h2>
+    <div class="columns is-centered" style="margin-top: 30px;">
+      <div class="column is-full">
+        <div style="width: 100%; display: flex; justify-content: center;">
+          <object data="assets/qualitative_final.svg" type="image/svg+xml" style="width: 100%; max-width: 1200px; height: auto;">
+            <img src="assets/qualitative_final.svg" alt="qualitative results" style="width: 100%; max-width: 1200px; height: auto;">
+          </object>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="container is-max-desktop">
     <!-- <div class="columns is-centered">
       <div class="column is-full">
         <div style="width: 100%; display: flex; justify-content: center;">
           <object data="assets/teaser.svg" type="image/svg+xml" style="width: 100%; max-width: 1200px; height: auto;">
             <img src="assets/teaser.svg" alt="teaser" style="width: 100%; max-width: 1200px; height: auto;">
           </object>
-        </div>
       </div>
+    </div>
     </div> -->
-      <p>
+      <!-- <p>
         <b>Overview</b>: 
         UGSDF takes posed images, dynamic object masks, 2D tracking data, and depth maps (optionally LiDAR) as input,
 and outputs rendered dynamic scene. The initial model is constructed through canonicalization described in Section 4.1. A dynamic
@@ -531,7 +613,7 @@ and outputs rendered dynamic scene. The initial model is constructed through can
 Distance Functions (SDFs) and 3D Gaussian Splatting (3DGS) as detailed in Section 4.3 and the joint optimization scheme is described
 in Section 4.5. These two representations are jointly learned. The coarse geometry of the Gaussians constrains the ray sampling of the
 SDF, while SDF queries add detail to the Gaussian representation.
-      </p>
+      </p> -->
   <br><br><br>
 </div></section>
 
@@ -721,6 +803,3 @@ function copyBibtex() {
     
 
 
-
-
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
