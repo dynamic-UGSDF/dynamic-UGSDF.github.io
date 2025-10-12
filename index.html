@@ -465,8 +465,10 @@
 
 </section>
 
+<br><br>
+
 <section class="hero">
-  <br><br><br>
+  
 
   <div class="columns is-centered">
     <div class="column is-full">
@@ -480,15 +482,22 @@
 
   <div class="container is-max-desktop" style="text-align: center; margin-top: 5px;">
     <p style="font-size: 1rem; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto;">
-      We propose Urban Gaussians via Signed Distance Functions (UGSDF) for dynamic object modeling and rendering
+      <!-- We propose Urban Gaussians via Signed Distance Functions (UGSDF) for dynamic object modeling and rendering
       in urban scenes. UGSDF maintains a Signed Distance Function (SDF) and 3D Gaussian Splatting (3DGS) representation to
       model and render a dynamic object. It can be used for object removal, scene decomposition, scene composition (inserted object
-      indicated with green arrow) and other tasks related to simulation in urban scenes.
+      indicated with green arrow) and other tasks related to simulation in urban scenes. -->
     </p>
   </div>
 
   <div class="container is-max-desktop">
-    <div style="background: linear-gradient(135deg, #e1f5fe, #e8f4fd, #f0f8ff); border-radius: 10px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 10px rgba(72, 96, 156, 0.1); display: inline-block;">
+    <div style="background: linear-gradient(135deg, #e8f5e8, #f0f8f0, #e8f5e8); border-radius: 10px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 10px rgba(76, 175, 80, 0.1); display: inline-block;">
+      <p style="font-size: 1rem; line-height: 1.5; color: #333; margin: 0;">
+        <strong style="color: #4caf50;">Motivation:</strong> Existing dynamic reconstruction methods rely heavily on LiDAR, 3D motion annotations, or object templates, which limits scalability and generalization.
+        <strong>Can we achieve high-quality dynamic 4D reconstruction and rendering using only 2D observations?</strong>
+      </p>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #e1f5fe, #e8f4fd, #f0f8ff); border-radius: 10px; padding: 10px; margin: 20px 0; box-shadow: 0 2px 10px rgba(72, 96, 156, 0.1); display: inline-block;">
       <p style="font-size: 1rem; line-height: 1.5; color: #333; margin: 0;">
         <strong style="color: #48609C;">TL;DR:</strong> We introduce UGSDF, a novel approach that fuses Gaussian Splatting and SDFs to 
         achieve temporally consistent, high-fidelity 4D reconstructions of 
@@ -527,6 +536,8 @@ integrates Signed Distance Functions (SDFs) with 3D Gaussian Splatting (3DGS) to
     </div>
     
   </div></section>
+
+  <br><br>
 
 <section class="section is-light">
   <div class="container is-max-desktop">
@@ -579,6 +590,8 @@ The approach builds a canonical 3D model of each dynamic object using 2D depth a
   </div>
 </section>
 
+<br><br>
+
 <section class="hero">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Qualitative Results</h2>
@@ -586,7 +599,7 @@ The approach builds a canonical 3D model of each dynamic object using 2D depth a
       <div class="column is-full">
         <div style="width: 100%; display: flex; justify-content: center;">
           <object data="assets/qualitative_final.svg" type="image/svg+xml" style="width: 100%; max-width: 1200px; height: auto;">
-            <img src="assets/qualitative_final.svg" alt="qualitative results" style="width: 100%; max-width: 1200px; height: auto;">
+            <img src="assets/qualitative_final.svg" alt="qualitative results" style="width: 150%; max-width: 1200px; height: auto;">
           </object>
         </div>
       </div>
