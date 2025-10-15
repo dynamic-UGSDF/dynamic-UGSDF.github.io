@@ -25,7 +25,7 @@
   <script src="static/index.js"></script>
 
 
-  <link rel="stylesheet" href="static/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 
 <style>
@@ -66,6 +66,11 @@
   background: linear-gradient(45deg, #FFB74D, #FFA726);
 }
 
+
+/* CVF Link */
+.cvf-link {
+  background: linear-gradient(45deg, #FF9800, #FF5722);
+}
 
 /* BibTeX Citation Link */
 .bibtex-link {
@@ -440,6 +445,14 @@
 
       <div class="column has-text-centered">
         <div class="publication-links">
+          <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Tourani_Leveraging_2D_Priors_and_SDF_Guidance_for_Urban_Scene_Rendering_ICCV_2025_paper.html" class="highlighted-link cvf-link">
+            <span class="icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CVF</text>
+              </svg>
+            </span>
+            <span>CVF-ICCV</span>
+          </a>
           <a class="highlighted-link arxiv-link">
             <span class="icon">
               <i class="ai ai-arxiv"></i>
@@ -452,6 +465,7 @@
             </span>
             <span>Code(Coming soon)</span>
           </a>
+          
           <a class="highlighted-link bibtex-link" onclick="openBibtexModal()">
             <span class="icon">
               <svg class="svg-inline--fa fa-book fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path></svg><!-- <i class="fas fa-book"></i> Font Awesome fontawesome.com -->
@@ -650,16 +664,17 @@ SDF, while SDF queries add detail to the Gaussian representation.
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-      ICCV 2025
-      <!-- @article{yang2025storm,
-  author    = {Jiawei Yang and Jiahui Huang and Yuxiao Chen and Yan Wang and Boyi Li and Yurong You and Maximilian Igl and Apoorva Sharma and Peter Karkus and Danfei Xu and Boris Ivanovic and Yue Wang and Marco Pavone},
-  title     = {STORM: Spatio-Temporal Reconstruction Model for Large-scale Outdoor Scenes},
-  journal   = {arXiv preprint arXiv:2501.00602},
-  year      = {2025} -->
-<!-- } -->
+      @InProceedings{Tourani_2025_ICCV,
+        author    = {Tourani, Siddharth and Reddy, Jayaram and Kumbar, Akash and Tourani, Satyajit and Goyal, Nishant and Krishna, Madhava and Reddy, N Dinesh and Khan, Muhammad Haris},
+        title     = {Leveraging 2D Priors and SDF Guidance for Urban Scene Rendering},
+        booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+        month     = {October},
+        year      = {2025},
+        pages     = {29051-29063}
+    }
 </code></pre>
   <h3 class="title">Acknowledgements</h3>
-  <p>Page borrowed from <a href="https://jiawei-yang.github.io/STORM/">STORM</a> and <a href="https://nerfies.github.io/">Nerfies</a>.</p>
+  <p>Page borrowed from <a href="https://nerfies.github.io/">Nerfies</a>.</p>
   </div>
 </section>
 <br>
